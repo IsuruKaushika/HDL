@@ -1,0 +1,66 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1110-g18392a46)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_0000025d546c6a50 .scope module, "comp1b" "comp1b" 2 2;
+ .timescale 0 0;
+    .port_info 0 /INPUT 2 "a";
+    .port_info 1 /INPUT 2 "b";
+    .port_info 2 /OUTPUT 1 "aeb";
+    .port_info 3 /OUTPUT 1 "agb";
+    .port_info 4 /OUTPUT 1 "alb";
+o0000025d545d6fa8 .functor BUFZ 2, C4<zz>; HiZ drive
+v0000025d546c7140_0 .net "a", 1 0, o0000025d545d6fa8;  0 drivers
+v0000025d546c6be0_0 .var "aeb", 0 0;
+v0000025d546c6c80_0 .var "agb", 0 0;
+v0000025d546c6d20_0 .var "alb", 0 0;
+o0000025d545d7068 .functor BUFZ 2, C4<zz>; HiZ drive
+v0000025d546cb940_0 .net "b", 1 0, o0000025d545d7068;  0 drivers
+E_0000025d546cca00 .event anyedge, v0000025d546c7140_0, v0000025d546cb940_0;
+    .scope S_0000025d546c6a50;
+T_0 ;
+    %wait E_0000025d546cca00;
+    %load/vec4 v0000025d546c7140_0;
+    %load/vec4 v0000025d546cb940_0;
+    %cmp/e;
+    %jmp/0xz  T_0.0, 4;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000025d546c6be0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000025d546c6c80_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000025d546c6d20_0, 0, 1;
+    %jmp T_0.1;
+T_0.0 ;
+    %load/vec4 v0000025d546cb940_0;
+    %load/vec4 v0000025d546c7140_0;
+    %cmp/u;
+    %jmp/0xz  T_0.2, 5;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000025d546c6be0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000025d546c6c80_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000025d546c6d20_0, 0, 1;
+    %jmp T_0.3;
+T_0.2 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000025d546c6be0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000025d546c6c80_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000025d546c6d20_0, 0, 1;
+T_0.3 ;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0, $push;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "comp1b.v";
