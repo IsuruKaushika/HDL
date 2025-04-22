@@ -1,0 +1,41 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1110-g18392a46)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_0000028b5ff46b70 .scope module, "busbreakout" "busbreakout" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "a";
+    .port_info 1 /INPUT 4 "b";
+    .port_info 2 /OUTPUT 6 "p";
+L_0000028b5ff949a0 .functor AND 1, L_0000028b5ffd8670, L_0000028b5ffd8a30, C4<1>, C4<1>;
+L_0000028b5ff4ec10 .functor AND 1, L_0000028b5ffd8b70, L_0000028b5ffd8d50, C4<1>, C4<1>;
+v0000028b5ff473b0_0 .net *"_ivl_1", 1 0, L_0000028b5ffd8990;  1 drivers
+v0000028b5ff46d00_0 .net *"_ivl_11", 0 0, L_0000028b5ffd8d50;  1 drivers
+v0000028b5ff46da0_0 .net *"_ivl_12", 0 0, L_0000028b5ff4ec10;  1 drivers
+v0000028b5ff46e40_0 .net *"_ivl_15", 1 0, L_0000028b5ffd8710;  1 drivers
+v0000028b5ff46ee0_0 .net *"_ivl_3", 0 0, L_0000028b5ffd8670;  1 drivers
+v0000028b5ff46f80_0 .net *"_ivl_5", 0 0, L_0000028b5ffd8a30;  1 drivers
+v0000028b5ff4ea40_0 .net *"_ivl_6", 0 0, L_0000028b5ff949a0;  1 drivers
+v0000028b5ff4eae0_0 .net *"_ivl_9", 0 0, L_0000028b5ffd8b70;  1 drivers
+o0000028b5ff970f8 .functor BUFZ 4, C4<zzzz>; HiZ drive
+v0000028b5ffd8f30_0 .net "a", 3 0, o0000028b5ff970f8;  0 drivers
+o0000028b5ff97128 .functor BUFZ 4, C4<zzzz>; HiZ drive
+v0000028b5ffd80d0_0 .net "b", 3 0, o0000028b5ff97128;  0 drivers
+v0000028b5ffd82b0_0 .net "p", 5 0, L_0000028b5ffd8490;  1 drivers
+L_0000028b5ffd8990 .part o0000028b5ff970f8, 0, 2;
+L_0000028b5ffd8670 .part o0000028b5ff970f8, 2, 1;
+L_0000028b5ffd8a30 .part o0000028b5ff97128, 0, 1;
+L_0000028b5ffd8b70 .part o0000028b5ff970f8, 3, 1;
+L_0000028b5ffd8d50 .part o0000028b5ff97128, 1, 1;
+L_0000028b5ffd8710 .part o0000028b5ff97128, 2, 2;
+L_0000028b5ffd8490 .concat [ 2 1 1 2], L_0000028b5ffd8710, L_0000028b5ff4ec10, L_0000028b5ff949a0, L_0000028b5ffd8990;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "busbreakout.v";

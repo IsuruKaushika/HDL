@@ -1,0 +1,55 @@
+$date
+	Tue Apr 22 14:57:46 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module simplemux_tb $end
+$var wire 4 ! c [3:0] $end
+$var reg 4 " a [3:0] $end
+$var reg 4 # b [3:0] $end
+$var reg 1 $ en $end
+$var reg 1 % se $end
+$scope module uut $end
+$var wire 4 & a [3:0] $end
+$var wire 4 ' b [3:0] $end
+$var wire 1 $ en $end
+$var wire 1 % se $end
+$var wire 4 ( c [3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bz (
+b101 '
+b1010 &
+0%
+0$
+b101 #
+b1010 "
+bz !
+$end
+#10000
+1%
+#20000
+b0 !
+b0 (
+1$
+0%
+b0 #
+b0 '
+b1111 "
+b1111 &
+#30000
+b1111 !
+b1111 (
+1%
+#40000
+bz !
+bz (
+0$
+#50000
