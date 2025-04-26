@@ -1,0 +1,43 @@
+$date
+	Sat Apr 26 10:23:16 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module comptb $end
+$var wire 1 ! c $end
+$var reg 1 " a $end
+$var reg 1 # b $end
+$scope module uut $end
+$var wire 1 " a $end
+$var wire 1 # b $end
+$var wire 1 ! c $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0#
+0"
+1!
+$end
+#10000
+0!
+1#
+#20000
+0#
+1"
+#30000
+1!
+1#
+#40000
+1!
+0#
+0"
+#50000
+0!
+1#
+#60000
