@@ -29,7 +29,8 @@ module tb();
         #10 a=1'h1; b=1'h1; cin=1'h0;
         #10 a=1'h1; b=1'h1; cin=1'h1;
 
-        #10 $finish;
+        #10 
+        $finish;
     end
 
     initial begin
