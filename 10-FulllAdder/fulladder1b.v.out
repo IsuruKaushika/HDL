@@ -1,0 +1,47 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1110-g18392a46)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000001f3e5ab2740 .scope module, "fulladder1b" "fulladder1b" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /INPUT 1 "cin";
+    .port_info 3 /OUTPUT 1 "s";
+    .port_info 4 /OUTPUT 1 "cout";
+L_000001f3e5b28c90 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v000001f3e5ab3010_0 .net *"_ivl_10", 0 0, L_000001f3e5b28c90;  1 drivers
+v000001f3e5ab28d0_0 .net *"_ivl_11", 1 0, L_000001f3e5b282c0;  1 drivers
+v000001f3e5ab2970_0 .net *"_ivl_13", 1 0, L_000001f3e5b27fa0;  1 drivers
+L_000001f3e5b28cd8 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v000001f3e5ab2a10_0 .net *"_ivl_16", 0 0, L_000001f3e5b28cd8;  1 drivers
+v000001f3e5ab2ab0_0 .net *"_ivl_17", 1 0, L_000001f3e5b27dc0;  1 drivers
+v000001f3e5ab2b50_0 .net *"_ivl_3", 1 0, L_000001f3e5b28220;  1 drivers
+L_000001f3e5b28c48 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v000001f3e5a9e510_0 .net *"_ivl_6", 0 0, L_000001f3e5b28c48;  1 drivers
+v000001f3e5a9e5b0_0 .net *"_ivl_7", 1 0, L_000001f3e5b280e0;  1 drivers
+o000001f3e5ae7158 .functor BUFZ 1, C4<z>; HiZ drive
+v000001f3e5a9e650_0 .net "a", 0 0, o000001f3e5ae7158;  0 drivers
+o000001f3e5ae7188 .functor BUFZ 1, C4<z>; HiZ drive
+v000001f3e5a9e780_0 .net "b", 0 0, o000001f3e5ae7188;  0 drivers
+o000001f3e5ae71b8 .functor BUFZ 1, C4<z>; HiZ drive
+v000001f3e5a9e820_0 .net "cin", 0 0, o000001f3e5ae71b8;  0 drivers
+v000001f3e5b28680_0 .net "cout", 0 0, L_000001f3e5b28040;  1 drivers
+v000001f3e5b27e60_0 .net "s", 0 0, L_000001f3e5b28180;  1 drivers
+L_000001f3e5b28040 .part L_000001f3e5b27dc0, 1, 1;
+L_000001f3e5b28180 .part L_000001f3e5b27dc0, 0, 1;
+L_000001f3e5b28220 .concat [ 1 1 0 0], o000001f3e5ae7158, L_000001f3e5b28c48;
+L_000001f3e5b280e0 .concat [ 1 1 0 0], o000001f3e5ae7188, L_000001f3e5b28c90;
+L_000001f3e5b282c0 .arith/sum 2, L_000001f3e5b28220, L_000001f3e5b280e0;
+L_000001f3e5b27fa0 .concat [ 1 1 0 0], o000001f3e5ae71b8, L_000001f3e5b28cd8;
+L_000001f3e5b27dc0 .arith/sum 2, L_000001f3e5b282c0, L_000001f3e5b27fa0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "fulladder1b.v";

@@ -1,0 +1,101 @@
+2)Write RTL code for basic logic gates;BUFFER,NOT,AND,NANDOR,XOR,NOR,XNOR.
+//Buffer
+module jdoodle(
+        input wire a,
+        output wire out);
+        
+        assign out = (a) ? 1'b1:1'bz;
+        
+endmodule
+
+module tb();
+    
+    reg a;
+    wire out;
+    
+    jdoodle ddt (.a(a),.out(out));
+    
+    initial begin
+        a=0;
+        $dumpfile("dump.vcd");
+        $dumpvars(0,tb);
+        
+        #10; a=1;
+        #10; a=0;
+        
+    end
+    
+    initial begin
+        $monitor("a=%b,out=%b",a,out);
+    end
+    endmodule
+
+
+//Not
+
+
+module jdoodle(
+        input wire a,
+        output wire nota);
+        
+        assign nota = ~a;
+        
+endmodule
+
+module tb();
+    
+    reg a;
+    wire nota;
+    
+    jdoodle ddt (.a(a),.nota(nota));
+    
+    initial begin
+        a=0;
+        $dumpfile("dump.vcd");
+        $dumpvars(0,tb);
+        
+        #10; a=1;
+        #10; a=0;
+        
+    end
+    
+    initial begin
+        $monitor("a=%b,nota=%b",a,nota);
+    end
+    endmodule
+
+//AND
+
+module jdoodle(
+        input wire a,
+        input wire b,
+        output wire out);
+        
+        assign out = (a&b);
+        
+endmodule
+
+module tb();
+    
+    reg a;
+    reg b;
+    wire out;
+    
+    jdoodle ddt (.a(a),.b(b),.out(out));
+    
+    initial begin
+        a=0;
+        $dumpfile("dump.vcd");
+        $dumpvars(0,tb);
+        
+        #10; a=1;b=1;
+        #10; a=0;b=0;
+        #10;a=1;b=0;
+        
+    end
+    
+    initial begin
+        $monitor("a=%b,b=%b,out=%b",a,b,out);
+    end
+    endmodule
+
