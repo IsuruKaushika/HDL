@@ -17,7 +17,7 @@ module tb();
 
     // Instantiate the DUT
     fulladderNb #(.N(N)) uut (
-        .a(a),
+        .a(a), 
         .b(b),
         .cin(cin),
         .sum(sum),
@@ -41,25 +41,12 @@ module tb();
             
             end
         end
+
+        a={N{1'b1}}; b={N{1'b1}}; cin=1;#10;
+        $display("Edge Case: a=%b , b=%b, cin = %b -> sum=%b,cout=%b",a,b,cin,sum,cout);
+        $finish; // End the simulation
     end
 
-    initial begin
-        $dumpfile("dump.vcd");
-        $dumpvars(0, tb);
 
-        a = 16'h0000; b = 16'h0000; cin = 0; #10;
-        a = 16'h0001; b = 16'h0001; cin = 0; #10;
-        a = 16'h00FF; b = 16'h0001; cin = 0; #10;
-        a = 16'hAAAA; b = 16'h5555; cin = 1; #10;
-        a = 16'h000F; b = 16'h00F0; cin = 1; #10;
-        a = 16'h7FFF; b = 16'h0001; cin = 1; #10;
-        a = 16'hFFFF; b = 16'hFFFF; cin = 1; #10;
-
-        #10 $finish;
-    end
-
-    initial begin
-        $monitor("a = %h, b = %h, cin = %b => sum = %h, cout = %b", a, b, cin, sum, cout);
-    end
 
 endmodule
